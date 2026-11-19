@@ -3,6 +3,7 @@ import { Leaf, LogOut } from 'lucide-react'
 import { escucharSesion, loginConGoogle, cerrarSesion } from './firebase'
 import RecipesView from './components/RecipesView.jsx'
 import PlannerView from './components/PlannerView.jsx'
+import GroceryList from './components/GroceryList.jsx'
 
 function mensajeLogin(error) {
   switch (error?.code) {
@@ -94,13 +95,14 @@ export default function App() {
         <button className={`tab ${tab === 'plan' ? 'active' : ''}`} onClick={() => setTab('plan')}>
           Mi semana
         </button>
+        <button className={`tab ${tab === 'super' ? 'active' : ''}`} onClick={() => setTab('super')}>
+          Lista de súpermercado
+        </button>
       </nav>
 
-      {tab === 'recetas' ? (
-        <RecipesView user={user} notify={notify} />
-      ) : (
-        <PlannerView user={user} notify={notify} />
-      )}
+      {tab === 'recetas' && <RecipesView user={user} notify={notify} />}
+      {tab === 'plan' && <PlannerView user={user} notify={notify} />}
+      {tab === 'super' && <GroceryList user={user} notify={notify} />}
 
       {toast && (
         <div className={`toast ${toast.type}`} role="status" aria-live="polite">

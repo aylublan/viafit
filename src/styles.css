@@ -123,3 +123,227 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); bo
   .detail-img { height: 220px; }
   .row { grid-template-columns: 1fr; }
 }
+/* === Estilos para Lista de Compras (GroceryList) === */
+.vf-grocery {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+/* Barra de progreso */
+.vf-progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.vf-bar {
+  flex: 1;
+  min-width: 120px;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.vf-bar span {
+  display: block;
+  height: 100%;
+  background: #16a34a;
+  transition: width 0.25s ease;
+}
+
+/* Filtros (Chips) espaciados */
+.vf-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.vf-chip {
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #374151;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.vf-chip:hover {
+  background: #f3f4f6;
+}
+
+.vf-chip.is-on {
+  background: #16a34a;
+  color: #ffffff;
+  border-color: #16a34a;
+  font-weight: 600;
+}
+
+/* Formulario de agregar producto */
+.vf-add-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.vf-add-fields input,
+.vf-add-row select {
+  padding: 0.6rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+}
+
+.vf-add-fields > input {
+  width: 100%;
+  max-width: 480px;
+}
+
+.vf-add-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+/* Botones principales y secundarios */
+.vf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 10px;
+  border: none;
+  background: #16a34a;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.vf-btn:hover:not(:disabled) {
+  background: #15803d;
+}
+
+.vf-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.vf-btn-ghost {
+  background: #ffffff;
+  color: #16a34a;
+  border: 1px solid #16a34a;
+}
+
+.vf-btn-ghost:hover:not(:disabled) {
+  background: #f0fdf4;
+}
+
+.vf-link {
+  background: none;
+  border: none;
+  color: #dc2626;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+/* Estado vacío y grupos de lista */
+.vf-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px dashed #d1d5db;
+}
+
+.vf-group h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #1f2937;
+}
+
+.vf-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.vf-group li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.9rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+.vf-group li.is-done .vf-item-name {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.vf-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid #16a34a;
+  background: #ffffff;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.vf-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #166534;
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vf-item-name {
+  flex: 1;
+  font-weight: 500;
+}
+
+.vf-item-qty {
+  font-size: 0.85rem;
+  color: #6b7280;
+  background: #f3f4f6;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+}
+
+.vf-icon {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.vf-icon:hover {
+  color: #dc2626;
+}
